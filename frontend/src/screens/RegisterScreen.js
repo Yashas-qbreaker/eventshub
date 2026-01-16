@@ -34,7 +34,7 @@ export default function RegisterScreen() {
         {error && (
           <div className="error-msg">
             {typeof error === 'string' ? error : typeof error === 'object' && error.message ? error.message : 'An error occurred. Please try again.'}
-          </div>
+              </div>
         )}
         <form onSubmit={submit} autoComplete="on">
           <div className="form-row">

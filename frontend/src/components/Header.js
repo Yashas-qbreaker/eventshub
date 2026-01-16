@@ -72,11 +72,11 @@ export default function Header() {
 
                 {/* Create event - only for admins */}
                 {userInfo?.is_staff && (
-                  <NavLink to="/organizer/create" className="nav-link create-event-btn d-flex align-items-center px-3 py-2 rounded-pill">
-                    <i className="bi bi-plus-circle-fill me-2"></i>
-                    <span className="d-none d-md-inline">Create Event</span>
-                    <span className="d-md-none">Create</span>
-                  </NavLink>
+                <NavLink to="/organizer/create" className="nav-link create-event-btn d-flex align-items-center px-3 py-2 rounded-pill">
+                  <i className="bi bi-plus-circle-fill me-2"></i>
+                  <span className="d-none d-md-inline">Create Event</span>
+                  <span className="d-md-none">Create</span>
+                </NavLink>
                 )}
 
                 <div className="nav-actions d-flex gap-2">

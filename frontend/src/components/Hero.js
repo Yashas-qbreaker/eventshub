@@ -3,33 +3,40 @@ import { useNavigate } from "react-router-dom";
 
 export default function Hero({ onSearch }) {
   const navigate = useNavigate();
+  const apiBase = process.env.REACT_APP_API_BASE || "http://localhost:8000";
+  
   const slides = [
     {
-      url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      url: `${apiBase}/media/banners/music-concert-banner.jpg`,
       headline: "Discover Amazing Events",
       subtitle: "Find and attend the best events happening around you",
       cta: "Explore Events",
       action: () => navigate("/"),
-      gradient: "linear-gradient(135deg, rgba(59, 130, 246, 0.85), rgba(30, 64, 175, 0.85))",
       icon: "🎉"
     },
     {
-      url: "https://images.unsplash.com/photo-1515165562835-c3b8c20b2e68?q=80&w=1600&auto=format&fit=crop",
+      url: `${apiBase}/media/banners/technology-future-banner.jpg`,
       headline: "Create Your Event",
       subtitle: "Organize and share your events with the world",
       cta: "Start Creating",
       action: () => navigate("/organizer/create"),
-      gradient: "linear-gradient(135deg, rgba(16, 185, 129, 0.85), rgba(5, 150, 105, 0.85))",
       icon: "✨"
     },
     {
-      url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
+      url: `${apiBase}/media/banners/cultural-image.jpg`,
       headline: "Connect & Network",
       subtitle: "Meet like-minded people and build lasting connections",
       cta: "Join Now",
       action: () => navigate("/register"),
-      gradient: "linear-gradient(135deg, rgba(139, 92, 246, 0.85), rgba(124, 58, 237, 0.85))",
       icon: "🤝"
+    },
+    {
+      url: `${apiBase}/media/banners/data-science-event-banner.jpg`,
+      headline: "Learn & Grow",
+      subtitle: "Expand your knowledge with expert-led events",
+      cta: "Explore Events",
+      action: () => navigate("/"),
+      icon: "📚"
     },
   ];
 
@@ -67,12 +74,24 @@ export default function Hero({ onSearch }) {
     <>
       <section className={`hero-carousel position-relative ${isLoaded ? 'hero-loaded' : ''}`}>
         <div className="hero-background">
-          <img src={slides[idx].url} alt="hero" className="w-100 hero-slide" />
+          <img 
+            src={slides[idx].url} 
+            alt={slides[idx].headline}
+            className="w-100 hero-slide"
+            loading="eager"
+            onError={(e) => {
+              console.error('Failed to load hero image:', slides[idx].url);
+              // Keep image visible but show error state
+              e.target.style.opacity = '0.3';
+            }}
+            onLoad={(e) => {
+              e.target.style.opacity = '1';
+            }}
+          />
           <div className="hero-background-overlay"></div>
         </div>
         <div
           className="hero-overlay"
-          style={{ background: slides[idx].gradient }}
         >
           <div className="container-fluid px-4">
             <div className="row justify-content-center text-center">
@@ -129,7 +148,7 @@ export default function Hero({ onSearch }) {
       </section>
 
       {/* Enhanced Categories Section */}
-      <div className="container-fluid px-4">
+      <div className="container-fluid px-4 categories-section-wrapper">
           <div className="categories-header text-center mb-4">
             <h2 className="categories-title">Explore Categories</h2>
             <p className="categories-subtitle">Find events that match your interests</p>

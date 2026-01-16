@@ -60,7 +60,7 @@ export default function HomeScreen() {
     <>
       <Hero onSearch={setFilters} />
 
-      <div className="container-fluid px-4">
+        <div className="container-fluid px-4">
           {/* Section Header */}
           <div className="section-header-container">
             <div className="section-header-wrapper">
@@ -164,13 +164,13 @@ export default function HomeScreen() {
                     const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
                     if (userInfo?.is_staff) {
                       return (
-                        <button
-                          className="btn btn-primary"
-                          onClick={() => navigate('/organizer/create')}
-                        >
-                          <i className="bi bi-plus-circle me-2"></i>
-                          Create Event
-                        </button>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => navigate('/organizer/create')}
+                  >
+                    <i className="bi bi-plus-circle me-2"></i>
+                    Create Event
+                  </button>
                       );
                     } else {
                       return null;
@@ -222,13 +222,13 @@ export default function HomeScreen() {
                       const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
                       if (userInfo?.is_staff) {
                         return (
-                          <button
-                            className="btn btn-primary btn-cta"
-                            onClick={() => navigate('/organizer/create')}
-                          >
-                            <i className="bi bi-plus-circle-fill me-2"></i>
-                            Create Your Event
-                          </button>
+                    <button
+                      className="btn btn-primary btn-cta"
+                      onClick={() => navigate('/organizer/create')}
+                    >
+                      <i className="bi bi-plus-circle-fill me-2"></i>
+                      Create Your Event
+                    </button>
                         );
                       } else if (userInfo) {
                         return (

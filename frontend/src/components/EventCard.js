@@ -116,14 +116,14 @@ export default function EventCard({ event }) {
                   {statusBadge && (
                     <div className={`badge-status badge-${statusBadge.color}`}>
                       {statusBadge.text}
-                    </div>
-                  )}
-                  {event.category && (
-                    <div className="badge-category">
-                      <span className="me-1">{getCategoryIcon(event.category.name)}</span>
-                      {event.category.name}
-                    </div>
-                  )}
+              </div>
+            )}
+            {event.category && (
+              <div className="badge-category">
+                <span className="me-1">{getCategoryIcon(event.category.name)}</span>
+                {event.category.name}
+              </div>
+            )}
                 </>
               );
             })()}
@@ -189,14 +189,14 @@ export default function EventCard({ event }) {
                 Book Now
               </Link>
             ) : (
-              <button 
+                <button
                 className="btn btn-primary btn-book-preview"
                 onClick={() => window.location.href = '/login'}
                 title="Please login to book events"
-              >
+                >
                 Login <i className="bi bi-arrow-right ms-1"></i>
-              </button>
-            )}
+                </button>
+              )}
           </div>
         </div>
       </div>

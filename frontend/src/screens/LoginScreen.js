@@ -34,29 +34,29 @@ export default function LoginScreen() {
         {error && (
           <div className="error-msg">
             {typeof error === 'string' ? error : typeof error === 'object' && error.message ? error.message : 'An error occurred. Please try again.'}
-          </div>
+                </div>
         )}
         <form onSubmit={submit} autoComplete="on">
-          <input
+                      <input
             type="text"
             placeholder="Enter your username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
             autoComplete="username"
-          />
-          <input
-            type="password"
+                      />
+                      <input
+                        type="password"
             placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
             autoComplete="current-password"
-          />
+                      />
           <button type="submit" disabled={loading}>
             {loading ? "Signing In..." : "Sign In"}
-          </button>
-        </form>
+                  </button>
+                </form>
         <div className="signup-link">
           Don't have an account?
           <Link to="/register">Sign up here</Link>
