@@ -7,7 +7,7 @@ export default function Hero({ onSearch }) {
   
   const slides = [
     {
-      url: `${apiBase}/media/banners/music-concert-banner.jpg`,
+      url: `${apiBase}/media/banners/music-concert-banner.png`,
       headline: "Discover Amazing Events",
       subtitle: "Find and attend the best events happening around you",
       cta: "Explore Events",
@@ -15,7 +15,7 @@ export default function Hero({ onSearch }) {
       icon: "🎉"
     },
     {
-      url: `${apiBase}/media/banners/technology-future-banner.jpg`,
+      url: `${apiBase}/media/banners/technology-future-banner.png`,
       headline: "Create Your Event",
       subtitle: "Organize and share your events with the world",
       cta: "Start Creating",
@@ -23,7 +23,7 @@ export default function Hero({ onSearch }) {
       icon: "✨"
     },
     {
-      url: `${apiBase}/media/banners/cultural-image.jpg`,
+      url: `${apiBase}/media/banners/cultural-image.png`,
       headline: "Connect & Network",
       subtitle: "Meet like-minded people and build lasting connections",
       cta: "Join Now",
@@ -31,7 +31,7 @@ export default function Hero({ onSearch }) {
       icon: "🤝"
     },
     {
-      url: `${apiBase}/media/banners/data-science-event-banner.jpg`,
+      url: `${apiBase}/media/banners/data-science-event-banner.png`,
       headline: "Learn & Grow",
       subtitle: "Expand your knowledge with expert-led events",
       cta: "Explore Events",
